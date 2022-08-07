@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/FizzBuzz_Fetch/static/css/main.073c9b0a.css",
+    "main.js": "/FizzBuzz_Fetch/static/js/main.c5efb2da.js",
+    "index.html": "/FizzBuzz_Fetch/index.html",
+    "main.073c9b0a.css.map": "/FizzBuzz_Fetch/static/css/main.073c9b0a.css.map",
+    "main.c5efb2da.js.map": "/FizzBuzz_Fetch/static/js/main.c5efb2da.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.c5efb2da.js"
+  ]
+}
