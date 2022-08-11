@@ -1,24 +1,33 @@
 import { useEffect, useState } from "react"
+import SearchBox from "./components/SearchBox";
+import User from './components/User'
+import './Styles/AppFetch.scss';
 
 
 export const AppFetch = () => {
-    const [user, setUser]= useState([])
+    const [users, setUsers]= useState([])
+    const [filterUser, setFilterUser]= useState([])
 
     useEffect(() => {
         fetch(`https://randomuser.me/api/?results=20`)
             .then(response => response.json())
             .then(data => {
-                setUser(data.results);
+                setUsers(data.results);
+                setFilterUser(data.results);
             });
     },[]);
 
+    const filtered = (filter)=>{
+        const fil = users.filter(user => user.name.first.includes(filter))
+        setFilterUser(fil)
+    }
+
     return (
-        <div>
-            <ul>
-            {user.map((user) => (
-                <li key={user.phone}>{ user.name.first }, {user.name.last }</li>
+        <div className="AppFetch">
+            <SearchBox handleChange={filtered}/>
+            {filterUser.map((user) => (
+                <User key={user.phone} name={user.name.first} lastName={user.name.last } />
             ))}
-            </ul>
         </div>
     );
 }
