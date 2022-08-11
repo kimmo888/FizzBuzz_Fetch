@@ -25,7 +25,8 @@ export const AppFetch = () => {
     return (
         <div className="AppFetch">
             <SearchBox handleChange={filtered}/>
-            {filterUser.map((user) => (
+            { filterUser.length === 0 ? <div className="NoResult"> No hay resultados</div> :
+                filterUser.map((user) => (
                 <User key={user.phone} name={user.name.first} lastName={user.name.last } />
             ))}
         </div>
